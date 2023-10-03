@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include employee_checkin_location *.css
+recursive-include employee_checkin_location *.csv
+recursive-include employee_checkin_location *.html
+recursive-include employee_checkin_location *.ico
+recursive-include employee_checkin_location *.js
+recursive-include employee_checkin_location *.json
+recursive-include employee_checkin_location *.md
+recursive-include employee_checkin_location *.png
+recursive-include employee_checkin_location *.py
+recursive-include employee_checkin_location *.svg
+recursive-include employee_checkin_location *.txt
+recursive-exclude employee_checkin_location *.pyc
