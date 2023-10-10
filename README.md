@@ -1,16 +1,19 @@
 # Employee Check Location
 
 ## Overview
-This repository contains code for an Employee Check Location application. The application allows you to track the location of employees using [provide more details about the technology or method used for location tracking].
+This repository contains code for an Employee Check Location application. The application allows you to track the location of employees using [https://opencagedata.com/api].
 
 ## Features
-- [List the key features of your application]
+- fetch current location of employee on load of employee checkin doc.
+- fetch longitude and latitude geocodes.
+- fetch city, state, area.
 
 ## Installation
-[Provide instructions on how to install and set up the application, including any dependencies]
+bench get-app https://github.com/ganureddy/Employee-Check-Location.git
+bench --site [your site] install-app employee_checkin_location
 
 ## Usage
-[Explain how to use the application, including any configuration or input requirements]
+The my_location field in the employee checkin doctype is a critical component that allows employees to provide their current physical whereabouts when checking in for work. This field is essential for tracking and ensuring the safety and productivity of employees.
 
 ## Contributing
 If you'd like to contribute to this project, please follow these guidelines:
@@ -21,7 +24,7 @@ If you'd like to contribute to this project, please follow these guidelines:
 - Create a pull request to merge your changes into the develop branch
 
 ## License
-[Specify the license under which your project is distributed, e.g., MIT License]
+[MIT License]
 
 ## Contact
 [ganureddy54@gmail.com]
