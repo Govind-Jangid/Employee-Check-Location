@@ -36,25 +36,30 @@ def get_polygon_around_location(latitude, longitude):
 def get_user_location(doc, method=None):
     
     # Comapany address coordinates
-    latitude = 17.4357646
-    longitude = 78.4568369
-    buffer_distance_in_km = 0.05
+    company = frappe.db.get_list("Company",['custom_latitude',"custom_longitude","custom_buffer_distance"])
+    latitude = company[0]['custom_latitude']
+    longitude = company[0]['custom_longitude']
+    buffer_distance_in_km = company[0]['custom_buffer_distance'] if company[0]['custom_buffer_distance']>0 else 0
     
     # user coordinates
     user_latiude = doc.latitude
     user_longitude = doc.longitude
-
+    
+   
     # Get buffered polygon around live location
-    buffered_polygon = get_polygon_around_location(latitude, longitude)
+    if latitude and longitude:
+        buffered_polygon = get_polygon_around_location(latitude, longitude)
 
-    hyde_park = Polygon(buffered_polygon).buffer(buffer_distance_in_km)
-    
-    
-    someone_inside = Point(user_latiude, user_longitude)
-    
-    is_inside_or_not = hyde_park.contains(someone_inside)
-    
-    if not is_inside_or_not:
-        frappe.throw(_("You are outside of office Location"))
+        hyde_park = Polygon(buffered_polygon).buffer(buffer_distance_in_km)
+        
+        
+        someone_inside = Point(user_latiude, user_longitude)
+        
+        is_inside_or_not = hyde_park.contains(someone_inside)
+        
+        if not is_inside_or_not:
+            frappe.throw(_("You are outside of office Location"))
+    else:
+        frappe.throw(_("Please Set Latiude and Longitude In Comapany Setting"))
     
    

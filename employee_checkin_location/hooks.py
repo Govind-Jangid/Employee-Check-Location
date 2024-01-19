@@ -54,6 +54,7 @@ fixtures = [
                 {
                     "Company-custom_latitude",
                     "Company-custom_longitude",
+                    "Company-custom_buffer_distance"
                 }
                 ]]
     }  
