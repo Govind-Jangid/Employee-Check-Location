@@ -118,13 +118,16 @@ doctype_js = {"Employee Checkin" : "public/js/location.js"}
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-#	"*": {
-#		"on_update": "method",
-#		"on_cancel": "method",
-#		"on_trash": "method"
-#	}
-# }
+doc_events = {
+	# "*": {
+	# 	"on_update": "method",
+	# 	"on_cancel": "method",
+	# 	"on_trash": "method"
+	# }
+    "Employee Checkin":{
+        "before_save":"employee_checkin_location.api.get_user_location"
+    }
+}
 
 # Scheduled Tasks
 # ---------------
