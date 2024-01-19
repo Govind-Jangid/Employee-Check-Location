@@ -36,7 +36,7 @@ def get_polygon_around_location(latitude, longitude):
 def get_user_location(doc, method=None):
     
     # Comapany address coordinates
-    company = frappe.db.get_list("Company",['custom_latitude',"custom_longitude","custom_buffer_distance"])
+    company = frappe.db.get_list("Company",{"name":doc.custom_company}['custom_latitude',"custom_longitude","custom_buffer_distance"])
     latitude = company[0]['custom_latitude']
     longitude = company[0]['custom_longitude']
     buffer_distance_in_km = company[0]['custom_buffer_distance'] if company[0]['custom_buffer_distance']>0 else 0
