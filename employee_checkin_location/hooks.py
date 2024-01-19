@@ -44,7 +44,20 @@ doctype_js = {"Employee Checkin" : "public/js/location.js"}
 # role_home_page = {
 #	"Role": "home_page"
 # }
-
+fixtures = [
+    {
+        "dt":
+            "Custom Field",
+            "filters":[[
+                "name",
+                "in",
+                {
+                    "Company-custom_latitude",
+                    "Company-custom_longitude",
+                }
+                ]]
+    }  
+]
 # Generators
 # ----------
 
